@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+
+import Box from './components/Box';
+
+const Row = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 24px;
+  justify-content: start;
+  width: max-content;
+  margin: 24px auto 64px;
+  align-items: start;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Row>
+        <Box>Architect</Box>
+        <Box>Lead Dev</Box>
+        <Box>Dev Manager</Box>
+      </Row>
+      <Row>
+        <Box>Sr Dev</Box>
+      </Row>
+      <Row>
+        <Box>Developer (Mid-level)</Box>
+      </Row>
+      <Row>
+        <Box skill>React</Box>
+        <Box skill>JS (ES6+)</Box>
+      </Row>
+      <Row>
+        <Box skill>Basic CSS</Box>
+        <Box skill>HTML</Box>
+        <Box skill>Markdown</Box>
+      </Row>
+      <Row>
+        <Box>Jr Dev</Box>
+        <Box>Dev Intern</Box>
+      </Row>
     </div>
   );
 }
