@@ -17,6 +17,7 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
 
+
   const openModal = (data) => () => {
     setModalTitle(data.label);
     setModalOpen(true);
@@ -34,7 +35,7 @@ function App() {
         nodeTypes={{
           box: Box,
         }}
-        defaultPosition={[100, 100]}
+        defaultPosition={[window.innerWidth * .2, 100]}
       />
       {
         modalOpen &&

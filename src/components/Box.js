@@ -7,7 +7,7 @@ const Block = styled.div`
   grid-template-columns: minmax(0, 1fr);
   grid-gap: 4px;
   justify-content: center;
-  width: 115px;
+  width: 140px;
   position: relative;
 `;
 
@@ -63,6 +63,8 @@ const Flag = styled.div`
   margin: 0 auto;
   border: 2px solid #000;
   position: relative;
+  max-width: 100%;
+  //word-break: break-word;
 `;
 
 const Info = styled.button.attrs({
