@@ -1,45 +1,46 @@
-import styled from 'styled-components';
+import { useState } from 'react';
+import ReactFlow from 'react-flow-renderer';
 
 import Box from './components/Box';
+import Tree from './components/TreeContainer';
+import Modal from './components/Modal';
+import jr from './trees/jr';
+import dev from './trees/dev';
 
-const Row = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 24px;
-  justify-content: start;
-  width: max-content;
-  margin: 24px auto 64px;
-  align-items: start;
-`;
+const addCallback = (arr, cbKey, cb) => arr.map((item) => {
+  if (!item.data) return item;
+  item.data[cbKey] = cb(item.data);
+  return item;
+});
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState('');
+
+  const openModal = (data) => () => {
+    setModalTitle(data.label);
+    setModalOpen(true);
+  };
+
   return (
-    <div>
-      <Row>
-        <Box>Architect</Box>
-        <Box>Lead Dev</Box>
-        <Box>Dev Manager</Box>
-      </Row>
-      <Row>
-        <Box>Sr Dev</Box>
-      </Row>
-      <Row>
-        <Box>Developer (Mid-level)</Box>
-      </Row>
-      <Row>
-        <Box skill>React</Box>
-        <Box skill>JS (ES6+)</Box>
-      </Row>
-      <Row>
-        <Box skill>Basic CSS</Box>
-        <Box skill>HTML</Box>
-        <Box skill>Markdown</Box>
-      </Row>
-      <Row>
-        <Box>Jr Dev</Box>
-        <Box>Dev Intern</Box>
-      </Row>
-    </div>
+    <Tree>
+      <ReactFlow
+        nodesDraggable={false}
+        nodesConnectable={false}
+        elements={addCallback([
+          ...jr,
+          ...dev,
+        ], 'onInfoClick', openModal)}
+        nodeTypes={{
+          box: Box,
+        }}
+        defaultPosition={[100, 100]}
+      />
+      {
+        modalOpen &&
+        <Modal title={modalTitle} onClose={() => setModalOpen(false)} />
+      }
+    </Tree>
   );
 }
 
