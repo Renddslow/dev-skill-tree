@@ -151,6 +151,36 @@ const dev = [
     data: { label: 'Render engine', type: 'skill' },
     position: getPosition(-4.5, -4.5),
   },
+  {
+    id: 'dev-26',
+    type: 'box',
+    data: { label: 'GraphQL', type: 'skill' },
+    position: getPosition(5, -1.5),
+  },
+  {
+    id: 'dev-27',
+    type: 'box',
+    data: { label: 'Go', type: 'skill' },
+    position: getPosition(5, -2.5),
+  },
+  {
+    id: 'dev-28',
+    type: 'box',
+    data: { label: 'Node.js', type: 'skill' },
+    position: getPosition(6, -2.5),
+  },
+  {
+    id: 'dev-29',
+    type: 'box',
+    data: { label: 'Node Scripting', type: 'skill', info: true },
+    position: getPosition(6, -3.5),
+  },
+  {
+    id: 'dev-30',
+    type: 'box',
+    data: { label: 'HTTP Servers', type: 'skill', info: true },
+    position: getPosition(6, -4.5),
+  },
   { id: 'dev-e2-3', source: 'dev-2', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-3' },
   { id: 'dev-e2-4', source: 'dev-2', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-4' },
   { id: 'dev-e6-7', source: 'dev-6', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-7' },
@@ -168,6 +198,8 @@ const dev = [
   { id: 'dev-e19-20', source: 'dev-19', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-20' },
   { id: 'dev-e20-21', source: 'dev-20', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-21' },
   { id: 'dev-e5-22', source: 'dev-5', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-22' },
+  { id: 'dev-e28-29', source: 'dev-28', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-29' },
+  { id: 'dev-e29-30', source: 'dev-29', targetHandle: 'bottom', sourceHandle: 'top', target: 'dev-30' },
 ];
 
 export default dev;
